@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import uuid from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import ContactContext from './ContactContext';
 import ContactReducer from './ContactReducer';
 import {
@@ -15,7 +15,7 @@ import {
 const ContactState = props => {
     const initialState = {
 
-        // these will be pulled from the api
+        // these will be pulled from the mongodb api
         contacts: [
             {
                 id: 1,
@@ -46,6 +46,12 @@ const ContactState = props => {
     //add actions to be send tothe reducer function ContactReducer
 
     //add contact
+    const addContact = (contact) => {
+
+        // when we add to mongodb it creates an id for us
+        contact.id = uuidv4();
+        dispatch({ type: ADD_CONTACT, payload: contact });
+    }
 
     //delete contact
 
@@ -63,7 +69,8 @@ const ContactState = props => {
         <ContactContext.Provider
         
             value = {{
-                contacts: state.contacts
+                contacts: state.contacts,
+                addContact
             }}
         >
 
