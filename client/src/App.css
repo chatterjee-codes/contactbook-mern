@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #003699;
+  --primary-color: #025f53;
   --dark-color: #333333;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --danger-color: #c23a4e;
+  --success-color: #20a73f;
 }
 
 * {
@@ -19,7 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+
   color: #333;
 }
 
@@ -93,8 +93,13 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  /* border: #ccc 1px dotted; */
   margin: 0.7rem 0;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255),
+    rgb(196, 216, 196)
+  );
 }
 
 /* List */
@@ -335,6 +340,12 @@ button {
   margin: 2rem auto;
   overflow: hidden;
   padding: 0 2rem;
+  /* background: rgb(182, 207, 193); */
+  background: linear-gradient(
+    to top right,
+    rgb(122, 180, 151),
+    rgb(221, 221, 148)
+  );
 }
 
 .form-container h1,
