@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Nabvar from './components/layout/Navbar';
 import Home from './components/pages/Home';
@@ -9,6 +9,7 @@ import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 import ContactState from './context/contact/ContactState';
+import AuthContext from './context/auth/AuthContext';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
@@ -21,7 +22,10 @@ if(localStorage.token) {
 
 
 const App = () => {
+
+
   return (
+
     <AuthState>
       <ContactState>
         <AlertState>

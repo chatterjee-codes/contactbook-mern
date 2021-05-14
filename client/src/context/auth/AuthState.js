@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect, useContext } from 'react';
 import axios from 'axios';
 import AuthContext from './AuthContext';
 import AuthReducer from './AuthReducer';
@@ -42,7 +42,7 @@ const AuthState = props => {
             dispatch({type:AUTH_ERROR});
         }
     }
-
+    
     // register user
     const register = async (formData) => {
         const config = {
